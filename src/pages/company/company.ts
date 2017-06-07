@@ -1,4 +1,4 @@
-import { AboutPage } from './../about/about';
+import { CompanyAddPage } from '../company-add/company-add';
 import { Component, ViewChild } from '@angular/core';
 import {List, IonicPage,  NavController,  NavParams} from 'ionic-angular';
 
@@ -20,7 +20,7 @@ export class CompanyPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
   ionViewDidEnter(){
-     this.companyList = ["a", "b", "c"]; //JSON.parse(localStorage.getItem("companies"));
+     this.companyList = JSON.parse(localStorage.getItem("company"));
      if(!this.companyList) {
             this.companyList = [];
         }
@@ -36,6 +36,6 @@ export class CompanyPage {
   }
 
   add(){
-    this.navCtrl.push(AboutPage);
+    this.navCtrl.push(CompanyAddPage);
   }
 }
