@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { CompanyModel } from './../../models/company'
 /**
  * Generated class for the CompanyAddPage page.
  *
@@ -13,15 +13,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'company-add.html',
 })
 export class CompanyAddPage {
-  public companyList: Array<string>;
-  public companyItem: string;
+  public companyList: Array<CompanyModel>;
+  public companyItem: CompanyModel;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.companyList = JSON.parse(localStorage.getItem("company"));
         if(!this.companyList) {
             this.companyList = [];
         }
-        this.companyItem = "";
+        this.companyItem = new CompanyModel;
   }
 
   ionViewDidLoad() {
@@ -29,7 +29,7 @@ export class CompanyAddPage {
   }
 
   save(){
-    if(this.companyItem != "") {
+    if(this.companyItem.name != "" || this.companyItem.cnpj != "" || this.companyItem.phone != "") {
       this.companyList.push(this.companyItem);
       localStorage.setItem("company", JSON.stringify(this.companyList));
       this.navCtrl.pop();

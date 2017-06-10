@@ -22,7 +22,8 @@
   <ion-list>
     <ion-item-sliding *ngFor="let company of companyList; let idx = index">
       <ion-item>
-        <h2>{{ company }}</h2>
+        <h2>{{ company.name }}</h2>
+        <h3>{{ company.phone }}</h3>
       </ion-item>
       <ion-item-options>
         <button danger (click)="edit(idx)">

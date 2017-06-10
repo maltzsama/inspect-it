@@ -1,3 +1,4 @@
+import { CompanyModel } from './../../models/company';
 import { CompanyAddPage } from '../company-add/company-add';
 import { Component, ViewChild } from '@angular/core';
 import {List, IonicPage,  NavController,  NavParams} from 'ionic-angular';
@@ -14,7 +15,7 @@ import {List, IonicPage,  NavController,  NavParams} from 'ionic-angular';
   templateUrl: 'company.html',
 })
 export class CompanyPage {
-  public companyList: Array<string>;
+  public companyList: Array<CompanyModel>;
   @ViewChild(List) list: List;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

@@ -19,8 +19,16 @@
 <ion-content class="add">
   <ion-list>
     <ion-item>
-      <ion-label floating>Nome da empresa</ion-label>
-      <ion-input type="text" [(ngModel)]="companyItem"></ion-input>
+      <ion-label floating>Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="companyItem.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>CNPJ</ion-label>
+      <ion-input type="text" [(ngModel)]="companyItem.cnpj"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Telefone</ion-label>
+      <ion-input type="text" [(ngModel)]="companyItem.phone"></ion-input>
     </ion-item>
   </ion-list>
 </ion-content>
