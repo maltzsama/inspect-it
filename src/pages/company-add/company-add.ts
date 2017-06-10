@@ -15,13 +15,26 @@ import { CompanyModel } from './../../models/company'
 export class CompanyAddPage {
   public companyList: Array<CompanyModel>;
   public companyItem: CompanyModel;
+  public title: string;
+  private index: number;
+  private edit: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.edit = false;
+    
     this.companyList = JSON.parse(localStorage.getItem("company"));
-        if(!this.companyList) {
-            this.companyList = [];
-        }
-        this.companyItem = new CompanyModel;
+    if(!this.companyList) {
+      this.companyList = [];
+    }
+    this.companyItem = new CompanyModel;
+    this.index = navParams.get("index");
+    if(this.index != undefined) {
+      this.title = "Editar";
+      this.companyItem = this.companyList[this.index];
+      this.edit = true;
+    }else{
+      this.title = "Adicionar";
+    }
   }
 
   ionViewDidLoad() {
@@ -29,11 +42,14 @@ export class CompanyAddPage {
   }
 
   save(){
-    if(this.companyItem.name != "" || this.companyItem.cnpj != "" || this.companyItem.phone != "") {
-      this.companyList.push(this.companyItem);
+    if(this.companyItem.name && this.companyItem.cnpj && this.companyItem.phone) {
+      if(this.edit){
+        this.companyList[this.index] = this.companyItem;
+      }else{
+        this.companyList.push(this.companyItem);
+      }
       localStorage.setItem("company", JSON.stringify(this.companyList));
       this.navCtrl.pop();
     }
   }
-
 }

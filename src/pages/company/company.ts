@@ -1,5 +1,5 @@
+import { CompanyAddPage } from './../company-add/company-add';
 import { CompanyModel } from './../../models/company';
-import { CompanyAddPage } from '../company-add/company-add';
 import { Component, ViewChild } from '@angular/core';
 import {List, IonicPage,  NavController,  NavParams} from 'ionic-angular';
 
@@ -32,11 +32,15 @@ export class CompanyPage {
   }
 
   edit(index: number){
-    this.companyList.splice(index, 1);
-    localStorage.setItem("company", JSON.stringify(this.companyList));
+    this.navCtrl.push(CompanyAddPage, {
+      index: index
+    });
   }
 
   add(){
     this.navCtrl.push(CompanyAddPage);
+  }
+  clear(){
+    localStorage.clear();
   }
 }
