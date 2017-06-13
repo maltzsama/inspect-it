@@ -44,6 +44,7 @@ export class CompanyAddPage {
   save(){
     if(this.companyItem.name && this.companyItem.cnpj && this.companyItem.phone) {
       if(this.edit){
+        this.companyItem.updated_at = Date.now();
         this.companyList[this.index] = this.companyItem;
       }else{
         this.companyList.push(this.companyItem);

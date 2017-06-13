@@ -23,7 +23,7 @@
 
 <ion-content class="company">
   <ion-list>
-    <ion-item-sliding *ngFor="let company of companyList; let idx = index">
+    <ion-item-sliding *ngFor="let company of companyList; let idx = index;" (click)="itemTapped($event, idx)"> 
       <ion-item>
         <h2>{{ company.name }}</h2>
         <h3>{{ company.phone }}</h3>
