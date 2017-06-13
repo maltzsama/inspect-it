@@ -17,7 +17,7 @@
 
 <ion-content class="inspection-list">
   <ion-list>
-    <ion-item-sliding *ngFor="let inspection of inspectionList; let idx = index;" (click)="itemTapped($event, idx)"> 
+    <ion-item-sliding *ngFor="let inspection of inspectionList; let idx = index;"> 
       <ion-item>
         <h2>{{ inspection.description }}</h2>
         <h3>{{ inspection.created_at }}</h3>

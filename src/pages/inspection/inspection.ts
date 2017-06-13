@@ -19,11 +19,13 @@ export class InspectionPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.index = navParams.get("index");
-    console.log(this.index);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad InspectionPage');
+  ionViewDidEnter() {
+    this.inspectionList = JSON.parse(localStorage.getItem("inspection"));
+    if(!this.inspectionList) {
+      this.inspectionList = [];
+    }
   }
 
   add(){
