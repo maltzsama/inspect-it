@@ -14,7 +14,7 @@ import { InspectionAddPage } from './../inspection-add/inspection-add';
   templateUrl: 'inspection.html',
 })
 export class InspectionPage {
-  public inpectionList: Array<InspectionModel>;
+  public inspectionList: Array<InspectionModel>;
   public index: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -28,6 +28,14 @@ export class InspectionPage {
 
   add(){
     this.navCtrl.push(InspectionAddPage);
+  }
+
+  edit(index: number){
+
+  }
+
+  delete(index: number){
+
   }
 
 }
