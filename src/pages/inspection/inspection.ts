@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { InspectionModel } from './../../models/inspection';
+import { InspectionAddPage } from './../inspection-add/inspection-add';
 /**
  * Generated class for the InspectionPage page.
  *
@@ -23,6 +24,10 @@ export class InspectionPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InspectionPage');
+  }
+
+  add(){
+    this.navCtrl.push(InspectionAddPage);
   }
 
 }
