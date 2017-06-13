@@ -36,6 +36,8 @@ export class InspectionPage {
 
   delete(index: number){
 
+    this.inspectionList.splice(index, 1); 
+    localStorage.setItem("inspection", JSON.stringify(this.inspectionList)); 
   }
 
 }
