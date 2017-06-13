@@ -31,11 +31,12 @@ export class InspectionPage {
   }
 
   edit(index: number){
-
+     this.navCtrl.push(InspectionAddPage, {
+      index: index
+    });
   }
 
   delete(index: number){
-
     this.inspectionList.splice(index, 1); 
     localStorage.setItem("inspection", JSON.stringify(this.inspectionList)); 
   }
