@@ -1,3 +1,4 @@
+import { InspectionPage } from './../inspection/inspection';
 import { CompanyAddPage } from './../company-add/company-add';
 import { CompanyModel } from './../../models/company';
 import { Component, ViewChild } from '@angular/core';
@@ -43,4 +44,10 @@ export class CompanyPage {
   clear(){
     localStorage.clear();
   }
+
+  itemTapped(event, idx: number) {
+    this.navCtrl.push(InspectionPage, {
+      index: idx
+    });
+  } 
 }
