@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { InspectionModel } from './../../models/inspection';
 /**
  * Generated class for the InspectionPage page.
  *
@@ -13,6 +13,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'inspection.html',
 })
 export class InspectionPage {
+  public inpectionList: Array<InspectionModel>;
   public index: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
