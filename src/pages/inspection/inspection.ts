@@ -15,16 +15,16 @@ import { InspectionAddPage } from './../inspection-add/inspection-add';
 })
 export class InspectionPage {
   public inspectionList: Array<InspectionModel>;
-  public index: number;
+  public company_id: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.index = navParams.get("index");
+    this.company_id = navParams.get("company_id");
   }
 
   ionViewDidEnter() {
     if(JSON.parse(localStorage.getItem("inspection"))){
       this.inspectionList = JSON.parse(localStorage.getItem("inspection")).filter(
-        inspection => inspection.company_id === this.index);
+        inspection => inspection.company_id === this.company_id);
     }
     if(!this.inspectionList) {
       this.inspectionList = [];
@@ -33,14 +33,14 @@ export class InspectionPage {
 
   add(){
     this.navCtrl.push(InspectionAddPage, {
-      company_id: this.index
+      company_id: this.company_id
     });
   }
 
   edit(index: number){
      this.navCtrl.push(InspectionAddPage, {
       index: index,
-      company_id: this.index
+      company_id: this.company_id
     });
   }
 

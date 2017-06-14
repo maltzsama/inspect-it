@@ -19,7 +19,7 @@ export class InspectionAddPage {
   public title: string;
   public edit: boolean;
   public index: number;
-  public company_id: number;
+  public company_id: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.edit = false;
