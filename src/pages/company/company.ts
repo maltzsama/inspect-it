@@ -22,10 +22,10 @@ export class CompanyPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
   ionViewDidEnter(){
-     this.companyList = JSON.parse(localStorage.getItem("company"));
-     if(!this.companyList) {
-            this.companyList = [];
-        }
+    this.companyList = JSON.parse(localStorage.getItem("company"));
+    if(!this.companyList) {
+      this.companyList = [];
+    }
   }
 
   ionViewDidLoad() {
