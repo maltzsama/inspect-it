@@ -1,5 +1,6 @@
 export class InspectionModel {
     id: number;
+    company_id: number;
     description: string;
     kind: string;
     severity: string;

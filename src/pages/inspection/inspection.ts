@@ -22,19 +22,25 @@ export class InspectionPage {
   }
 
   ionViewDidEnter() {
-    this.inspectionList = JSON.parse(localStorage.getItem("inspection"));
+    if(JSON.parse(localStorage.getItem("inspection"))){
+      this.inspectionList = JSON.parse(localStorage.getItem("inspection")).filter(
+        inspection => inspection.company_id === this.index);
+    }
     if(!this.inspectionList) {
       this.inspectionList = [];
     }
   }
 
   add(){
-    this.navCtrl.push(InspectionAddPage);
+    this.navCtrl.push(InspectionAddPage, {
+      company_id: this.index
+    });
   }
 
   edit(index: number){
      this.navCtrl.push(InspectionAddPage, {
-      index: index
+      index: index,
+      company_id: this.index
     });
   }
 
