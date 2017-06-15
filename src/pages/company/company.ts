@@ -33,7 +33,6 @@ export class CompanyPage {
   }
 
   edit(index: number){
-    this.companyList[index].id;
     this.navCtrl.push(CompanyAddPage, {
       index: index
     });
