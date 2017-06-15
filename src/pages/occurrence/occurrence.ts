@@ -1,3 +1,4 @@
+import { OccurrenceAddPage } from './../occurrence-add/occurrence-add';
 import { OccurrenceModel } from './../../models/occurrence';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -33,12 +34,21 @@ export class OccurrencePage {
   }
 
   add(){
+    this.navCtrl.push(OccurrenceAddPage, {
+      inspection_id: this.inspection_id
+    });
   }
 
   edit(index: number){
+    this.navCtrl.push(OccurrenceAddPage, {
+      index: index,
+      inspection_id: this.inspection_id
+    });
   }
 
   delete(index: number){
+    this.occurrenceList.splice(index, 1); 
+    localStorage.setItem("occurrence", JSON.stringify(this.occurrenceList)); 
   }
 
 }

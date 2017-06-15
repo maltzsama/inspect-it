@@ -1,4 +1,3 @@
-import { OccurrencePage } from './../pages/occurrence/occurrence';
 import { AppMaskerModule } from 'brmasker-ionic';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -10,6 +9,9 @@ import { CompanyPage } from '../pages/company/company';
 import { CompanyAddPage } from '../pages/company-add/company-add';
 import { InspectionPage } from './../pages/inspection/inspection';
 import { InspectionAddPage } from "./../pages/inspection-add/inspection-add";
+import { OccurrencePage } from './../pages/occurrence/occurrence';
+import { OccurrenceAddPage } from './../pages/occurrence-add/occurrence-add';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CompanyAddPage,
     InspectionPage,
     InspectionAddPage,
-    OccurrencePage
+    OccurrencePage,
+    OccurrenceAddPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CompanyAddPage,
     InspectionPage,
     InspectionAddPage,
-    OccurrencePage
+    OccurrencePage,
+    OccurrenceAddPage
   ],
   providers: [
     StatusBar,

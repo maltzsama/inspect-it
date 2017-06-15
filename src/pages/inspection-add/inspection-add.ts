@@ -41,10 +41,6 @@ export class InspectionAddPage {
     }
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad InspectionAddPage');
-  }
-
   save(){
     if (this.inspectionItem.name){
       if(this.edit){
