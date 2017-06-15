@@ -9,6 +9,9 @@ import { CompanyPage } from '../pages/company/company';
 import { CompanyAddPage } from '../pages/company-add/company-add';
 import { InspectionPage } from './../pages/inspection/inspection';
 import { InspectionAddPage } from "./../pages/inspection-add/inspection-add";
+import { OccurrencePage } from './../pages/occurrence/occurrence';
+import { OccurrenceAddPage } from './../pages/occurrence-add/occurrence-add';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,7 +23,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CompanyPage,
     CompanyAddPage,
     InspectionPage,
-    InspectionAddPage
+    InspectionAddPage,
+    OccurrencePage,
+    OccurrenceAddPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CompanyPage,
     CompanyAddPage,
     InspectionPage,
-    InspectionAddPage
+    InspectionAddPage,
+    OccurrencePage,
+    OccurrenceAddPage
   ],
   providers: [
     StatusBar,
