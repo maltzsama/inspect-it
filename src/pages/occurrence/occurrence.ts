@@ -32,4 +32,13 @@ export class OccurrencePage {
     }
   }
 
+  add(){
+  }
+
+  edit(index: number){
+  }
+
+  delete(index: number){
+  }
+
 }

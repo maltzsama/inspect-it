@@ -8,6 +8,9 @@
 
   <ion-navbar>
     <ion-title>occurrence</ion-title>
+    <ion-buttons end>
+      <button (click)="add()"><ion-icon name="add"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -22,11 +25,11 @@
       </ion-item>
       <ion-item-options>
         <button danger>
-          <ion-icon name="trash"></ion-icon>
+          <ion-icon name="trash" (click)="edit(idx)"></ion-icon>
             Editar
           </button>
           <button danger>
-          <ion-icon name="trash"></ion-icon>
+          <ion-icon name="trash" (click)="delete(idx)"></ion-icon>
             Apagar
           </button>
       </ion-item-options>
