@@ -1,3 +1,4 @@
+import { OccurrencePage } from './../pages/occurrence/occurrence';
 import { AppMaskerModule } from 'brmasker-ionic';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -20,7 +21,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CompanyPage,
     CompanyAddPage,
     InspectionPage,
-    InspectionAddPage
+    InspectionAddPage,
+    OccurrencePage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CompanyPage,
     CompanyAddPage,
     InspectionPage,
-    InspectionAddPage
+    InspectionAddPage,
+    OccurrencePage
   ],
   providers: [
     StatusBar,

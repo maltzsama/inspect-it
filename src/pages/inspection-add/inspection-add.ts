@@ -46,9 +46,7 @@ export class InspectionAddPage {
   }
 
   save(){
-
-
-    if (this.inspectionItem.description){
+    if (this.inspectionItem.name){
       if(this.edit){
         this.inspectionItem.updated_at = Date.now();
         this.inspectionList[this.index] = this.inspectionItem;

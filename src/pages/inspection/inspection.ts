@@ -1,3 +1,4 @@
+import { OccurrencePage } from './../occurrence/occurrence';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { InspectionModel } from './../../models/inspection';
@@ -47,6 +48,11 @@ export class InspectionPage {
   delete(index: number){
     this.inspectionList.splice(index, 1); 
     localStorage.setItem("inspection", JSON.stringify(this.inspectionList)); 
+  }
+  itemTapped(event, idx:number){
+    this.navCtrl.push(OccurrencePage, {
+      inspection_id: this.inspectionList[idx].id
+    });
   }
 
 }
