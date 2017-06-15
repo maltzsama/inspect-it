@@ -1,11 +1,12 @@
+import { AppMaskerModule } from 'brmasker-ionic';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { CompanyAddPage } from './company-add';
-import { AppMaskerModule } from 'brmasker-ionic';
 
 @NgModule({
   declarations: [
     CompanyAddPage,
+    AppMaskerModule 
   ],
   imports: [
     IonicPageModule.forChild(CompanyAddPage),
