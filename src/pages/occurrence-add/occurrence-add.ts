@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, 
+  NavController,
+  NavParams, 
+  Platform, 
+  ActionSheetController, 
+  LoadingController } from 'ionic-angular';
 import { OccurrenceModel } from './../../models/occurrence';
+import { CameraProvider } from './../../providers/camera/camera.provider';
 
 /**
  * Generated class for the OccurrenceAddPage page.
@@ -20,9 +26,13 @@ export class OccurrenceAddPage {
   public edit: boolean;
   public index: number;
   public inspection_id: string;
+  
+  placeholder = 'assets/icon/gavicon.ico';
+  chosenPicture: any;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public actionsheetCtrl: ActionSheetController,
+    public cameraProvider: CameraProvider, public platform: Platform, public loadingCtrl: LoadingController) {
     this.edit = false;
 
     this.occurrenceList = JSON.parse(localStorage.getItem("occurrence"));
@@ -54,6 +64,66 @@ export class OccurrenceAddPage {
       localStorage.setItem("occurrence", JSON.stringify(this.occurrenceList));
       this.navCtrl.pop();
     }
+  }
+
+  changePicture() {
+
+    let actionsheet = this.actionsheetCtrl.create({
+      title: 'upload picture',
+      buttons: [
+        {
+          text: 'camera',
+          icon: !this.platform.is('ios') ? 'camera' : null,
+          handler: () => {
+            this.takePicture();
+          }
+        },
+        {
+          text: !this.platform.is('ios') ? 'gallery' : 'camera roll',
+          icon: !this.platform.is('ios') ? 'image' : null,
+          handler: () => {
+            this.getPicture();
+          }
+        },
+        {
+          text: 'cancel',
+          icon: !this.platform.is('ios') ? 'close' : null,
+          role: 'destructive',
+          handler: () => {
+            console.log('the user has cancelled the interaction.');
+          }
+        }
+      ]
+    });
+    return actionsheet.present();
+  }
+
+  takePicture() {
+    let loading = this.loadingCtrl.create();
+
+    loading.present();
+    return this.cameraProvider.getPictureFromCamera().then(picture => {
+      if (picture) {
+        this.chosenPicture = picture;
+      }
+      loading.dismiss();
+    }, error => {
+      alert(error);
+    });
+  }
+
+  getPicture() {
+    let loading = this.loadingCtrl.create();
+
+    loading.present();
+    return this.cameraProvider.getPictureFromPhotoLibrary().then(picture => {
+      if (picture) {
+        this.chosenPicture = picture;
+      }
+      loading.dismiss();
+    }, error => {
+      alert(error);
+    });
   }
 
 }

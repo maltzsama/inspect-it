@@ -13,9 +13,10 @@ import { LoginPage } from './../pages/login/login';
 import { OccurrencePage } from './../pages/occurrence/occurrence';
 import { OccurrenceAddPage } from './../pages/occurrence-add/occurrence-add';
 
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Camera } from '@ionic-native/camera';
+import { CameraProvider } from '../providers/camera/camera.provider';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    Camera,
+    CameraProvider,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CameraProvider
   ]
 })
 export class AppModule {}
