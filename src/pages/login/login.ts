@@ -19,7 +19,7 @@ export class LoginPage {
   
 
   constructor(public menu: MenuController, public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public alertCtrl: AlertController, public app: App) {
-    this.menu.enable(false);    
+    //this.menu.enable(false);    
 }
 
   ionViewDidLoad() {
