@@ -11,7 +11,6 @@ import { InspectionPage } from './../pages/inspection/inspection';
 import { InspectionAddPage } from "./../pages/inspection-add/inspection-add";
 import { OccurrencePage } from './../pages/occurrence/occurrence';
 import { OccurrenceAddPage } from './../pages/occurrence-add/occurrence-add';
-import { GetImagePage } from './../pages/get-image/get-image';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,8 +26,7 @@ import { CameraProvider } from '../providers/camera/camera.provider';
     InspectionPage,
     InspectionAddPage,
     OccurrencePage,
-    OccurrenceAddPage,
-    GetImagePage
+    OccurrenceAddPage
   ],
   imports: [
     BrowserModule,
@@ -44,8 +42,7 @@ import { CameraProvider } from '../providers/camera/camera.provider';
     InspectionPage,
     InspectionAddPage,
     OccurrencePage,
-    OccurrenceAddPage,
-    GetImagePage
+    OccurrenceAddPage
   ],
   providers: [
     StatusBar,
