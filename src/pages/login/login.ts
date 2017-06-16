@@ -14,6 +14,9 @@ import { AlertController, App, LoadingController, IonicPage, NavController, NavP
 })
 export class LoginPage {
 
+  public loginForm: any;
+  public backgroundImage = "assets/img/background/Bg.png";
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public alertCtrl: AlertController, public app: App) {
   }
 

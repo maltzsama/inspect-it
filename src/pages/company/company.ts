@@ -56,5 +56,5 @@ export class CompanyPage {
     this.navCtrl.push(InspectionPage, {
       company_id: this.companyList[idx].id
     });
-  } 
+  }
 }
