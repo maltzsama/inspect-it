@@ -63,7 +63,7 @@ export class OccurrenceAddPage {
         if(this.chosenPicture){
           this.occurrenceItem.photo = this.chosenPicture;
         }else{
-          this.occurrenceItem.photo = ""
+          this.occurrenceItem.photo
         }
         this.occurrenceList[this.index] = this.occurrenceItem;
       }else{
