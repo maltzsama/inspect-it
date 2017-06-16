@@ -1,3 +1,4 @@
+import { LoginPage } from './../login/login';
 import { InspectionPage } from './../inspection/inspection';
 import { CompanyAddPage } from './../company-add/company-add';
 import { CompanyModel } from './../../models/company';
@@ -21,6 +22,7 @@ export class CompanyPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidEnter(){
     this.companyList = JSON.parse(localStorage.getItem("company"));
     if(!this.companyList) {
@@ -29,6 +31,11 @@ export class CompanyPage {
   }
 
   ionViewDidLoad() {
+    var user = new Boolean;
+    user = true;
+    if(user = true){
+      this.navCtrl.push(LoginPage)
+    }
     console.log('ionViewDidLoad CompanyPage');
   }
 
