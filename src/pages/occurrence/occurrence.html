@@ -24,12 +24,12 @@
         <h3>{{ occurrence.created_at }}</h3>
       </ion-item>
       <ion-item-options>
-        <button danger>
-          <ion-icon name="trash" (click)="edit(idx)"></ion-icon>
+        <button danger (click)="edit(idx)">
+          <ion-icon name="trash"></ion-icon>
             Editar
           </button>
-          <button danger>
-          <ion-icon name="trash" (click)="delete(idx)"></ion-icon>
+          <button danger (click)="delete(idx)">
+          <ion-icon name="trash"></ion-icon>
             Apagar
           </button>
       </ion-item-options>
