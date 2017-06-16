@@ -9,13 +9,10 @@ import { CompanyPage } from '../pages/company/company';
 import { CompanyAddPage } from '../pages/company-add/company-add';
 import { InspectionPage } from './../pages/inspection/inspection';
 import { InspectionAddPage } from "./../pages/inspection-add/inspection-add";
-<<<<<<< HEAD
 import { LoginPage } from './../pages/login/login';
-=======
 import { OccurrencePage } from './../pages/occurrence/occurrence';
 import { OccurrenceAddPage } from './../pages/occurrence-add/occurrence-add';
 
->>>>>>> 6f57cf0689f4c61da84bbf3a475a17e116a309c0
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,12 +25,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CompanyAddPage,
     InspectionPage,
     InspectionAddPage,
-<<<<<<< HEAD
-    LoginPage
-=======
+    LoginPage,
     OccurrencePage,
     OccurrenceAddPage
->>>>>>> 6f57cf0689f4c61da84bbf3a475a17e116a309c0
   ],
   imports: [
     BrowserModule,
@@ -48,12 +42,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CompanyAddPage,
     InspectionPage,
     InspectionAddPage,
-<<<<<<< HEAD
-    LoginPage
-=======
+    LoginPage,
     OccurrencePage,
     OccurrenceAddPage
->>>>>>> 6f57cf0689f4c61da84bbf3a475a17e116a309c0
   ],
   providers: [
     StatusBar,
