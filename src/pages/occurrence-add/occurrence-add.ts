@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OccurrenceModel } from './../../models/occurrence';
-
+import { GetImagePage } from './../get-image/get-image'
 /**
  * Generated class for the OccurrenceAddPage page.
  *
@@ -54,6 +54,10 @@ export class OccurrenceAddPage {
       localStorage.setItem("occurrence", JSON.stringify(this.occurrenceList));
       this.navCtrl.pop();
     }
+  }
+
+  itemTapped(event) {
+    this.navCtrl.push(GetImagePage);
   }
 
 }

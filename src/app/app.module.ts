@@ -11,10 +11,12 @@ import { InspectionPage } from './../pages/inspection/inspection';
 import { InspectionAddPage } from "./../pages/inspection-add/inspection-add";
 import { OccurrencePage } from './../pages/occurrence/occurrence';
 import { OccurrenceAddPage } from './../pages/occurrence-add/occurrence-add';
-
+import { GetImagePage } from './../pages/get-image/get-image';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Camera } from '@ionic-native/camera';
+import { CameraProvider } from '../providers/camera/camera.provider';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     InspectionPage,
     InspectionAddPage,
     OccurrencePage,
-    OccurrenceAddPage
+    OccurrenceAddPage,
+    GetImagePage
   ],
   imports: [
     BrowserModule,
@@ -41,12 +44,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     InspectionPage,
     InspectionAddPage,
     OccurrencePage,
-    OccurrenceAddPage
+    OccurrenceAddPage,
+    GetImagePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    Camera,
+    CameraProvider,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CameraProvider
   ]
 })
 export class AppModule {}
