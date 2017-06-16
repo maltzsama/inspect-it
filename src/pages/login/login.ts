@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController, App, LoadingController, IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController, App, LoadingController, IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 
 /**
  * Generated class for the LoginPage page.
@@ -16,9 +16,11 @@ export class LoginPage {
 
   public loginForm: any;
   public backgroundImage = "assets/img/background/Bg.png";
+  
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public alertCtrl: AlertController, public app: App) {
-  }
+  constructor(public menu: MenuController, public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public alertCtrl: AlertController, public app: App) {
+    this.menu.enable(false);    
+}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
