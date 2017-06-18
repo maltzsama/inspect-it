@@ -1,3 +1,4 @@
+import { RecoverPwdPage } from './../recover-pwd/recover-pwd';
 import { Component } from '@angular/core';
 import { AlertController, App, LoadingController, IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 
@@ -49,7 +50,7 @@ export class LoginPage {
   }
 
   goToResetPassword() {
-    // this.navCtrl.push(ResetPasswordPage);
+    this.navCtrl.push(RecoverPwdPage);
   }
 
 }
