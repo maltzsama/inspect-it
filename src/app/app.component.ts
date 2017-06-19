@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { AboutPage } from '../pages/about/about';
 import { CompanyPage } from '../pages/company/company';
+import { SyncPage } from './../pages/sync/sync';
 
 
 @Component({
@@ -23,6 +24,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Empresas', component: CompanyPage},
+      { title: 'Sincronizar', component: SyncPage},
       { title: 'About', component: AboutPage},
     ];
 

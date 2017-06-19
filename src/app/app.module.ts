@@ -13,6 +13,7 @@ import { LoginPage } from './../pages/login/login';
 import { OccurrencePage } from './../pages/occurrence/occurrence';
 import { OccurrenceAddPage } from './../pages/occurrence-add/occurrence-add';
 import { RecoverPwdPage } from './../pages/recover-pwd/recover-pwd';
+import { SyncPage } from './../pages/sync/sync';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -30,7 +31,8 @@ import { CameraProvider } from '../providers/camera/camera.provider';
     LoginPage,
     OccurrencePage,
     OccurrenceAddPage,
-    RecoverPwdPage
+    RecoverPwdPage,
+    SyncPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ import { CameraProvider } from '../providers/camera/camera.provider';
     LoginPage,
     OccurrencePage,
     OccurrenceAddPage,
-    RecoverPwdPage
+    RecoverPwdPage,
+    SyncPage
   ],
   providers: [
     StatusBar,
