@@ -16,7 +16,7 @@ export class CameraProvider {
   }
 
   // This method takes optional parameters to make it more customizable
-  getImage(pictureSourceType, crop = false, quality = 50, allowEdit = true, saveToAlbum = true) {
+  getImage(pictureSourceType, crop = true, quality = 50, allowEdit = false, saveToAlbum = true) {
     let options = {
       quality: quality,
       destinationType: this.camera.DestinationType.DATA_URL,

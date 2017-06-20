@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>occurrence-add</ion-title>
+    <ion-title>{{title}} ocorrência</ion-title>
     <ion-buttons end>
       <button (click)="save()"><ion-icon name="checkmark"></ion-icon></button>
     </ion-buttons>
@@ -22,11 +22,10 @@
       <ion-label floating>Descrição</ion-label>
       <ion-input type="text" [(ngModel)]="occurrenceItem.description"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-avatar (click)="changePicture()">
-        <img [src]="chosenPicture || placeholder" onerror="this.src='assets/img/avatar/girl-avatar.png'" />
-        <button ion-button color="danger">Capturar Imagem</button>
-      </ion-avatar>
-    </ion-item>
+    <ion-card-content>
+      <img [src]="chosenPicture || placeholder" onerror="this.src='assets/img/placeholder.png'"
+      (click)="changePicture()"/>
+      <button ion-button color="danger" (click)="changePicture()">Capturar Imagem</button>
+    </ion-card-content>
   </ion-list>
 </ion-content>

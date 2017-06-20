@@ -27,8 +27,8 @@ export class OccurrenceAddPage {
   public index: number;
   public inspection_id: string;
   
-  placeholder = 'assets/icon/gavicon.ico';
-  chosenPicture: any;
+  public placeholder = 'assets/img/placeholder.png';
+  public chosenPicture: any;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public actionsheetCtrl: ActionSheetController,
@@ -46,6 +46,10 @@ export class OccurrenceAddPage {
       this.title = "Editar";
       this.occurrenceItem = this.occurrenceList[this.index];
       this.edit = true;
+      if(this.occurrenceItem.photo){
+        this.chosenPicture = this.occurrenceItem.photo;
+        this.placeholder = this.occurrenceItem.photo;
+      }
     }else{
       this.title = "Adicionar";
       this.occurrenceItem = new OccurrenceModel;
@@ -56,9 +60,19 @@ export class OccurrenceAddPage {
     if (this.occurrenceItem.description){
       if(this.edit){
         this.occurrenceItem.updated_at = Date.now();
+        if(this.chosenPicture){
+          this.occurrenceItem.photo = this.chosenPicture;
+        }else{
+          this.occurrenceItem.photo
+        }
         this.occurrenceList[this.index] = this.occurrenceItem;
       }else{
         this.occurrenceItem.inspection_id = this.inspection_id;
+        if(this.chosenPicture){
+          this.occurrenceItem.photo = this.chosenPicture;
+        }else{
+          this.occurrenceItem.photo = ""
+        }
         this.occurrenceList.push(this.occurrenceItem);
       }
       localStorage.setItem("occurrence", JSON.stringify(this.occurrenceList));
