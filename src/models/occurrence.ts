@@ -7,12 +7,12 @@ export class OccurrenceModel {
     photo: string;
     due_time: string;
     severity: string;
-    created_at: number;
-    updated_at: number;
+    created_at: string;
+    updated_at: string;
     constructor(){
         this.id = this.random_id();
-        this.created_at = Date.now();
-        this.updated_at = Date.now();
+        this.created_at = Date.now().toString();
+        this.updated_at = Date.now().toString();
         this.nr_code = 0;
         this.nr_description = '';
         this.description = '';

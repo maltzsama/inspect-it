@@ -59,7 +59,7 @@ export class OccurrenceAddPage {
   save(){
     if (this.occurrenceItem.description){
       if(this.edit){
-        this.occurrenceItem.updated_at = Date.now();
+        this.occurrenceItem.updated_at = Date.now().toString();
         if(this.chosenPicture){
           this.occurrenceItem.photo = this.chosenPicture;
         }else{
