@@ -90,6 +90,10 @@ export class OccurrenceAddPage {
 
   changePicture() {
 
+    if(!this.edit){
+      return;
+    }
+
     let actionsheet = this.actionsheetCtrl.create({
       title: 'upload picture',
       buttons: [

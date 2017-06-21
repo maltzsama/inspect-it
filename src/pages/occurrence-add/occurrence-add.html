@@ -20,7 +20,7 @@
   <ion-list>
     <ion-item>
       <ion-label floating>Descrição</ion-label>
-      <ion-input type="text" [(ngModel)]="occurrenceItem.description"></ion-input>
+      <ion-input type="text" [(ngModel)]="occurrenceItem.description" [readonly]="!edit"></ion-input>
     </ion-item>
     <ion-card-content>
       <img [src]="chosenPicture || placeholder" onerror="this.src='assets/img/placeholder.png'"
