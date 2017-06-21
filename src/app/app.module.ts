@@ -59,7 +59,7 @@ import { CameraProvider } from '../providers/camera/camera.provider';
     Camera,
     CameraProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CameraProvider
+    CameraProvider,
   ]
 })
 export class AppModule {}

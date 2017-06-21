@@ -21,7 +21,7 @@
     <ion-item-sliding *ngFor="let occurrence of occurrenceList; let idx = index;"> 
       <ion-item>
         <h2>{{ occurrence.description }}</h2>
-        <h3>{{ occurrence.created_at }}</h3>
+        <h3>{{ occurrence.created_at | date: 'medium'}}</h3>
       </ion-item>
       <ion-item-options>
         <button danger (click)="edit(idx)">
