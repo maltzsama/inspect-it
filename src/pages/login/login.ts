@@ -1,4 +1,3 @@
-import { AboutPage } from './../about/about';
 import { RecoverPwdPage } from './../recover-pwd/recover-pwd';
 import { Component } from '@angular/core';
 import { AlertController, App, LoadingController, IonicPage, NavController, NavParams, MenuController, Platform } from 'ionic-angular';
