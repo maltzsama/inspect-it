@@ -19,7 +19,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { CameraProvider } from '../providers/camera/camera.provider';
-//import { ExpandableHeaderComponent } from '../components/expandable-header/expandable-header';
 import { ExpandableHeader } from '../components/expandable-header/expandable-header';
 
 
