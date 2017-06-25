@@ -27,10 +27,10 @@
   <ion-list>    
     <ion-item-sliding *ngFor="let company of companyList; let idx = index;"> 
       <ion-item (click)="itemTapped($event, idx)">
-      <i id="erro"class="material-icons">error</i>
+      <i id="erro" class="ion-android-alert"></i>
         <h2>{{ company.name }}</h2>
         <h3>{{ company.phone }}</h3>  
-        <i id="seta-dir" class="material-icons">keyboard_arrow_right</i>      
+        <i id="seta-dir" class="ion-ios-arrow-right"></i>      
       </ion-item>
       <ion-item-options>
         <button danger (click)="edit(idx)">
@@ -41,6 +41,6 @@
     </ion-item-sliding>
   </ion-list>
     <ion-fab bottom right>
-      <button ion-fab (click)="add()" color="danger"><i class="material-icons">add</i></button>
+      <button ion-fab (click)="add()" color="danger"><i class="ion-plus-round"></i></button>
     </ion-fab>
 </ion-content>
