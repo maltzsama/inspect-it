@@ -20,7 +20,7 @@
     <ion-item-sliding *ngFor="let inspection of inspectionList; let idx = index;"> 
       <ion-item (click)="itemTapped($event, idx)">
         <h2>{{ inspection.name }}</h2>
-        <h3>{{ inspection.created_at }}</h3>
+        <h3>{{ inspection.created_at | date: 'medium'}}</h3>
       </ion-item>
       <ion-item-options>
         <button danger (click)="edit(idx)">

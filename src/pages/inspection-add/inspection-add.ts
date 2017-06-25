@@ -44,7 +44,7 @@ export class InspectionAddPage {
   save(){
     if (this.inspectionItem.name){
       if(this.edit){
-        this.inspectionItem.updated_at = Date.now();
+        this.inspectionItem.updated_at = Date.now().toString();
         this.inspectionList[this.index] = this.inspectionItem;
       }else{
         this.inspectionItem.company_id = this.company_id;
