@@ -8,13 +8,10 @@
 
   <ion-navbar>
     <ion-title>{{title}} Empresa</ion-title>
-    <ion-buttons end>
-      <button (click)="save()"><ion-icon name="checkmark"></ion-icon></button>
-    </ion-buttons>
-  </ion-navbar>
-
+  </ion-navbar>  
 </ion-header>
 
+ 
 
 <ion-content class="company-add">
   <ion-list>
@@ -27,6 +24,10 @@
       <ion-input type="tel" name="cnpj" [brmasker]="{mask:'00.000.000/0000-00', len:18}" [(ngModel)]="companyItem.cnpj"></ion-input>
     </ion-item>
      <ion-item>
+      <ion-label floating>Endereço</ion-label>
+      <ion-input type="text" name="endereco" [(ngModel)]="companyItem.adress"></ion-input>
+    </ion-item>
+     <ion-item>
       <ion-label floating>Contato</ion-label>
       <ion-input type="text" name="contato" [(ngModel)]="companyItem.contact"></ion-input>
     </ion-item>
@@ -35,4 +36,7 @@
       <ion-input type="tel" name="telefone" [brmasker]="{mask:'(00) 0000-0000', len:14}" [(ngModel)]="companyItem.phone"></ion-input>
     </ion-item>
   </ion-list>
+  <ion-fab bottom right>
+      <button ion-fab (click)="save()" color="secondary"><i class="ion-checkmark-round"></i></button>
+    </ion-fab>
 </ion-content>
