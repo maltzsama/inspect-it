@@ -8,13 +8,8 @@
 
   <ion-navbar>
     <ion-title>Inspeção</ion-title>
-    <ion-buttons end>
-      <button (click)="add()"><ion-icon name="add"></ion-icon></button>
-    </ion-buttons>
-  </ion-navbar>
+  </ion-navbar> 
 </ion-header>
-
-
 <ion-content class="inspection-list">
   <ion-list>
     <ion-item-sliding *ngFor="let inspection of inspectionList; let idx = index;"> 
@@ -34,4 +29,7 @@
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
+  <ion-fab bottom right>
+      <button ion-fab (click)="add()" color="danger"><i class="ion-plus-round"></i></button>
+    </ion-fab>
 </ion-content>
