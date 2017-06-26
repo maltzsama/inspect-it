@@ -24,7 +24,7 @@ export class CameraProvider {
       quality: quality,
       destinationType: this.camera.DestinationType.DATA_URL,
       sourceType: pictureSourceType,
-      encodingType: this.camera.EncodingType.JPEG,
+      encodingType: this.camera.EncodingType.PNG,
       saveToPhotoAlbum: saveToAlbum
     };
 
