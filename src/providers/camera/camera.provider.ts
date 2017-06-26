@@ -16,7 +16,7 @@ export class CameraProvider {
   }
 
   // This method takes optional parameters to make it more customizable
-  getImage(pictureSourceType, crop = false, allowEdit = false, quality = 50, saveToAlbum = true) {
+  getImage(pictureSourceType, allowEdit = false, quality = 50, saveToAlbum = true) {
     //screen.msLockOrientation('landscape')
     let options = {
       targetHeight: 600,
