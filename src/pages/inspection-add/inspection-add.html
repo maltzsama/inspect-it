@@ -8,9 +8,6 @@
 
   <ion-navbar>
     <ion-title>{{title}} Inspeção</ion-title>
-    <ion-buttons end>
-      <button (click)="save()"><ion-icon name="checkmark"></ion-icon></button>
-    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -23,4 +20,7 @@
       <ion-input type="text" [(ngModel)]="inspectionItem.name"></ion-input>
     </ion-item>
   </ion-list>
+   <ion-fab bottom right>
+      <button ion-fab (click)="save()" color="secondary"><i class="ion-checkmark-round"></i></button>
+    </ion-fab>
 </ion-content>
