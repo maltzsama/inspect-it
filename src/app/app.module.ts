@@ -19,6 +19,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { CameraProvider } from '../providers/camera/camera.provider';
+import { ExpandableHeader } from '../components/expandable-header/expandable-header';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { CameraProvider } from '../providers/camera/camera.provider';
     OccurrencePage,
     OccurrenceAddPage,
     RecoverPwdPage,
-    SyncPage
+    SyncPage,
+    ExpandableHeader
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { CameraProvider } from '../providers/camera/camera.provider';
     OccurrencePage,
     OccurrenceAddPage,
     RecoverPwdPage,
-    SyncPage
+    SyncPage,
+    
   ],
   providers: [
     StatusBar,
@@ -59,7 +63,10 @@ import { CameraProvider } from '../providers/camera/camera.provider';
     Camera,
     CameraProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CameraProvider,
+    CameraProvider
+  ],
+  exports: [
+    ExpandableHeader
   ]
 })
 export class AppModule {}

@@ -1,8 +1,10 @@
+import { CompanyModel } from './../../models/company';
 import { OccurrencePage } from './../occurrence/occurrence';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { InspectionModel } from './../../models/inspection';
 import { InspectionAddPage } from './../inspection-add/inspection-add';
+
 /**
  * Generated class for the InspectionPage page.
  *
@@ -16,16 +18,16 @@ import { InspectionAddPage } from './../inspection-add/inspection-add';
 })
 export class InspectionPage {
   public inspectionList: Array<InspectionModel>;
-  public company_id: string;
+  public company: CompanyModel;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.company_id = navParams.get("company_id");
+    this.company = navParams.get("company");
   }
 
   ionViewDidEnter() {
     if(JSON.parse(localStorage.getItem("inspection"))){
       this.inspectionList = JSON.parse(localStorage.getItem("inspection")).filter(
-        inspection => inspection.company_id === this.company_id);
+        inspection => inspection.company_id === this.company.id);
     }
     if(!this.inspectionList) {
       this.inspectionList = [];
@@ -34,14 +36,14 @@ export class InspectionPage {
 
   add(){
     this.navCtrl.push(InspectionAddPage, {
-      company_id: this.company_id
+      company_id: this.company.id
     });
   }
 
   edit(index: number){
      this.navCtrl.push(InspectionAddPage, {
       index: index,
-      company_id: this.company_id
+      company_id: this.company.id
     });
   }
 
