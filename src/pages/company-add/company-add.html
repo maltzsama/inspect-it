@@ -5,7 +5,6 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>{{title}} Empresa</ion-title>
   </ion-navbar>  
@@ -15,28 +14,16 @@
 
 <ion-content class="company-add">
   <ion-list>
-    <ion-item>
-      <ion-label floating>Nome</ion-label>
-      <ion-input type="text" name="nome" maxlength="10" [(ngModel)]="companyItem.name"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating>CNPJ</ion-label>
-      <ion-input type="tel" name="cnpj" [brmasker]="{mask:'00.000.000/0000-00', len:18}" [(ngModel)]="companyItem.cnpj"></ion-input>
-    </ion-item>
-     <ion-item>
-      <ion-label floating>Endereço</ion-label>
-      <ion-input type="text" name="endereco" [(ngModel)]="companyItem.adress"></ion-input>
-    </ion-item>
-     <ion-item>
-      <ion-label floating>Contato</ion-label>
-      <ion-input type="text" name="contato" [(ngModel)]="companyItem.contact"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating>Telefone</ion-label>
-      <ion-input type="tel" name="telefone" [brmasker]="{mask:'(00) 0000-0000', len:14}" [(ngModel)]="companyItem.phone"></ion-input>
-    </ion-item>
-  </ion-list>
-  <ion-fab bottom right>
-      <button ion-fab (click)="save()" color="secondary"><i class="ion-checkmark-round"></i></button>
-    </ion-fab>
+      <ion-label stacked>Nome da empresa</ion-label>
+      <ion-input type="text" name="nome" maxlength="10" placeholder="Adicionar nome da empresa" [(ngModel)]="companyItem.name"></ion-input>
+      <ion-label stacked>CNPJ</ion-label>
+      <ion-input type="tel" name="cnpj" placeholder="Adicionar CNPJ" [brmasker]="{mask:'00.000.000/0000-00', len:18}" [(ngModel)]="companyItem.cnpj"></ion-input>
+      <ion-label stacked>Endereço</ion-label>
+      <ion-input type="text" name="endereco" placeholder="Adicionar endereço" [(ngModel)]="companyItem.adress"></ion-input>
+      <ion-label stacked>Telefone de contato</ion-label>
+      <ion-input type="tel" name="telefone" placeholder="Adicionar telefone de contato"[brmasker]="{mask:'(00) 0000-0000', len:14}" [(ngModel)]="companyItem.phone"></ion-input>
+      <ion-label stacked>Responsável</ion-label>
+      <ion-input type="text" name="contato" placeholder="Adicionar responsável" [(ngModel)]="companyItem.contact"></ion-input>
+    </ion-list>
+    <button ion-button (click)="save()" class="botao-salvar"> Salvar </button>
 </ion-content>
