@@ -35,20 +35,29 @@ export class OccurrencePage {
 
   add(){
     this.navCtrl.push(OccurrenceAddPage, {
-      inspection_id: this.inspection_id
+      inspection_id: this.inspection_id,
+      edit: true
     });
   }
 
   edit(index: number){
     this.navCtrl.push(OccurrenceAddPage, {
       index: index,
-      inspection_id: this.inspection_id
+      inspection_id: this.inspection_id,
+      edit: true
     });
   }
 
   delete(index: number){
     this.occurrenceList.splice(index, 1); 
     localStorage.setItem("occurrence", JSON.stringify(this.occurrenceList)); 
+  }
+
+  show(index: number){
+    this.navCtrl.push(OccurrenceAddPage, {
+      index: index,
+      edit: false
+    });
   }
 
 }

@@ -1,6 +1,6 @@
 import { RecoverPwdPage } from './../recover-pwd/recover-pwd';
 import { Component } from '@angular/core';
-import { AlertController, App, LoadingController, IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+import { AlertController, App, LoadingController, IonicPage, NavController, NavParams, MenuController, Platform } from 'ionic-angular';
 
 /**
  * Generated class for the LoginPage page.
@@ -19,8 +19,26 @@ export class LoginPage {
   public backgroundImage = "assets/img/background/Bg.png";
   
 
-  constructor(public menu: MenuController, public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public alertCtrl: AlertController, public app: App) {
-    //this.menu.enable(false);    
+  constructor(public menu: MenuController, public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public alertCtrl: AlertController, public app: App, private platform: Platform) {
+    //this.menu.enable(false);
+        
+    platform.ready().then(() => {
+          // Okay, so the platform is ready and our plugins are available.
+          // Here you can do any higher level native things you might need
+
+          platform.registerBackButtonAction(() => {
+            if(this.menu.isOpen()){
+               this.menu.close()
+            } 
+            else if(this.navCtrl.canGoBack()){
+              this.doConfirm();
+              console.log("back apertado!");
+            }else{
+              //don't do anything
+            }
+          });
+        });
+
 }
 
   ionViewDidLoad() {
@@ -43,6 +61,30 @@ export class LoginPage {
 
     loading.present();
 
+  }
+
+  doConfirm() {
+    let alert = this.alertCtrl.create({
+      title: 'Sair?',
+      message: 'Você deseja mesmo sair do aplicativo?',
+      buttons: [
+        {
+          text: 'Não',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Sair',
+          handler: () => {
+            this.platform.exitApp();
+            console.log('Agree clicked');
+          }
+        }
+      ]
+    });
+
+    alert.present();
   }
 
   goToSignup() {
