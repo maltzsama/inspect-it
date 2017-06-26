@@ -26,8 +26,8 @@ export class ExpandableHeader {
  
       this.newHeaderHeight = this.headerHeight - ev.scrollTop;
  
-      if(this.newHeaderHeight < 0){
-        this.newHeaderHeight = 0;
+      if(this.newHeaderHeight < 56){
+        this.newHeaderHeight = 56;
       }   
  
       this.renderer.setElementStyle(this.element.nativeElement, 'height', this.newHeaderHeight + 'px');

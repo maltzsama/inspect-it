@@ -57,4 +57,8 @@ export class InspectionPage {
     });
   }
 
+  back(){
+    this.navCtrl.pop();
+  }
+
 }
